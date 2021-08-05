@@ -17,7 +17,6 @@ def compute_ecdf(input_vector):
 
 
 def generate_empirical_random_sample(x, ecdf, n_samples):
-    number_of_intervals = len(x) - 1
     u = np.random.uniform(low=np.min(ecdf), high=np.max(ecdf), size=n_samples)
     idx = np.searchsorted(ecdf, u)
     x_low = x[idx - 1]
